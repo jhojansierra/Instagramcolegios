@@ -1,0 +1,33 @@
+.navar>a {
+color: black;
+padding:15%;
+}
+.navar{
+border-bottom:  1px solid;
+background-color: #b8bec6;
+}
+.clase{
+height:  100px;
+width:  100px;
+border-radius: 20px;
+
+}
+.bloque_principal > input{
+
+height:  20px;
+width:  20%;
+font-size: 50%;
+
+}
+.bloque_2 > input {
+height:  20px;
+width:  20%;
+font-size: 50%;
+
+}
+#bloque_p_2 > input  {
+height: 20px;
+width: 20%;
+
+
+}
