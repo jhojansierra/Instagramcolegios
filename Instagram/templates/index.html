@@ -13,16 +13,18 @@
 </head>
 
 <body>
-  <center><h4>instagram</h4>
-  <div class="creation"> <hr>
-  <input type="text" placeholder="correo electronico"><p>
-  <input type="text" placeholder="nombre completo"><p>
-  <input type="text" placeholder="nombre de usuario"><p>
-  <input type="password" placeholder="contraseña"><p>
-  </div>
-  <input type="submit"value"registrarse"><p>
-  </center>
-
+  <form class" "action="{% url 'index' %}" method="post">
+    {% csrf_token %}
+    <center><h4>instagram</h4>
+    <div class="creation"> <hr>
+    <input type="text" name="correo" placeholder="correo electronico"><p>
+    <input type="text" name="nombre_completo" placeholder="nombre completo"><p>
+    <input type="text" name="usuario" placeholder="nombre de usuario"><p>
+    <input type="password" name="password" placeholder="contraseña"><p>
+    </div>
+    <input type="submit"value="registrarse"><p>
+    </center>
+  </form>
 
 </body>
 </html>
