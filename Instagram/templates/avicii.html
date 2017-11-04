@@ -1,25 +1,27 @@
+{% load static %}
 <!DOCTYPE html>
 <html >
 <head>
   <meta charset="UTF-8">
   <title>jhocaro</title>
-  
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
   <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
 
-      <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="{% static 'css/avicii2.css'%}">
 
-  
+
 </head>
 
 <body>
-  
+
+
 <section class="insta">
   <section class="insta-header"><img class="insta-photo-profile" src="http://media.tumblr.com/752c1adeaa17abe4c57f4f075bbbbd4f/tumblr_inline_mvn6rsCXJz1qjrc4q.png"/>
     <section class="insta-header-data">
       <section class="insta-info">
-        <h2 class="insta-username">jhocaro</h2>
+        <h2 class="insta-username">{{ usuario_actual.usuario_django.username}}</h2>
         <button class="insta-follow-button">seguir</button>
         <button class="insta-suggestions fa fa-caret-down"></button>
         <button class="insta-options fa fa-ellipsis-h"></button>
@@ -80,7 +82,7 @@
     </section>
   </section>
 </section>
-  
-  
+
+
 </body>
 </html>

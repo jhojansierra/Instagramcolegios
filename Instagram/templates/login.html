@@ -14,11 +14,14 @@
   <center>
   login<p>
   <hr>
-<input type="text" placeholder="usuario"><p>
-<input type="password" placeholder="contraseña"><p>
-<input type="submit" valude"ingresar"><br>
+  <form class="" action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+
+
+    <input type="text" name="username"placeholder="usuario"><p>
+    <input type="password" name="password" placeholder="contraseña"><p>
+    <input type="submit" valude"ingresar"><br>
 </center>
-
-
+</form>
 </body>
 </html>

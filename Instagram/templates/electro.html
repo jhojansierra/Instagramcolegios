@@ -1,18 +1,22 @@
+
+{% load static %}
 <!DOCTYPE html>
+
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>jho 1</title>
+  <title>Bienbenido</title>
   <link href="https://file.myfontastic.com/eX9EJvWQNgpLFYLDwUG8tf/icons.css" rel="stylesheet">
 
-  
-  
-      <link rel="stylesheet" href="css/style.css">
 
-  
+
+      <link rel="stylesheet" href="{% static 'css/style.css'%}">
+
+
 </head>
 
 <body>
+  <a href="{% url 'Logout' %}">cerrar secion</a>
   <section class='photo_container'>
 	<section class='photo_header'>
 		<img src="https://instagram.fbog2-1.fna.fbcdn.net/t51.2885-19/s150x150/19424856_1220219384771948_4505404857959579648_a.jpg" class='photo_user'>
@@ -37,7 +41,7 @@
 		<i class='acm-dots'></i>
 	</section>
 </section>
-  
-  
+
+
 </body>
 </html>
