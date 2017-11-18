@@ -1,0 +1,52 @@
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background: #F8F9F9;
+}
+
+.photo_container {
+  width: 300px;
+  background: white;
+  border: 1px solid #ccc;
+}
+
+.photo_container .photo_username {
+  padding: 10px;
+  border-radius: 50%;
+  width: 100px;
+  height: 10px;
+}
+
+.photo_container .photo_header {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50px;
+}
+
+.photo_container .photo_lnput {
+  padding: 10px;
+  padding-top: 16px;
+  font-size: 1.04rem;
+  margin: 5px 0;
+}
+
+.photo_container .photo_buttom {
+  width: 100%;
+  font-size: 94%;
+}
+
+.photo_container .photo_add {
+  padding-top: 1px;
+  font-size: 1.04rem;
+  margin: 5px 0;
+  border-radius: 50px;
+}

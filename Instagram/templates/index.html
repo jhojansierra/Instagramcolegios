@@ -6,7 +6,7 @@
   <title>inicio</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style2.css' %}">
 
 
 
@@ -15,14 +15,34 @@
 <body>
   <form class" "action="{% url 'index' %}" method="post">
     {% csrf_token %}
-    <center><h4>instagram</h4>
-    <div class="creation"> <hr>
-    <input type="text" name="correo" placeholder="correo electronico"><p>
-    <input type="text" name="nombre_completo" placeholder="nombre completo"><p>
-    <input type="text" name="usuario" placeholder="nombre de usuario"><p>
-    <input type="password" name="password" placeholder="contraseña"><p>
-    </div>
-    <input type="submit"value="registrarse"><p>
+    <section class='photo_container'>
+    <center><h2 class='photo_username'><i>Instagram</i></h2></secton>
+    <section class="photo_header">
+     reguistrate para ver las imagenes y videos de tus amigos
+    </section>
+    <section class="photo_buttom">
+      <input type="submit"value="inicia secion con Facebook"><p>
+    </section>
+      <hr width="85%" />
+
+    <section class="photo_lnput">
+      <section class="photo_add">
+        <input type="text" name="correo" placeholder="correo electronico">
+      </section>
+      <section class="photo_add">
+      <input type="text"name="nombre_completo" placeholder="nombre completo">
+      </section>
+      <section class="photo_add">
+        <input type="text" name="usuario" placeholder="nombre de usuario">
+      </section>
+      <section class="photo_add">
+        <input type="password"name="password" placeholder="contraseña">
+      </section>
+    </section>
+      </div>
+    <section class="photo_buttom">
+      <input type="submit"value="registrarse"><p>
+    </section>
     </center>
   </form>
 
