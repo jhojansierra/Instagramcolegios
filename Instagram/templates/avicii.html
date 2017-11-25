@@ -7,15 +7,28 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
-  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
-
         <link rel="stylesheet" href="{% static 'css/avicii2.css'%}">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="{% static 'css/navbar.css'%}">
 
 
 </head>
 
 <body>
-
+  <nav class="navbar">
+    <section class="logo-section"><img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Instagram_simple_icon.svg/600px-Instagram_simple_icon.svg.png"/>
+      <div></div><img class="logo_name" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png"/>
+    </section>
+    <section class="search-section">
+      <input class="input-search" type="search" name="search" placeholder="Buscar"/>
+    </section>
+    <section class="icons-section">
+      <a class="fa fa-upload" href="{% url 'galeria' %}"></a>
+      <a class="fa fa-heart-o" href="#"></a>
+      <a class="fa fa-user-o" href="{% url 'avicii' %}"></a>
+    </section>
+  </nav>
 
 <section class="insta">
   <section class="insta-header"><img class="insta-photo-profile" src="http://media.tumblr.com/752c1adeaa17abe4c57f4f075bbbbd4f/tumblr_inline_mvn6rsCXJz1qjrc4q.png"/>
@@ -27,7 +40,7 @@
         <button class="insta-options fa fa-ellipsis-h"></button>
       </section>
       <section class="insta-follows">
-        <p><span class="insta-indicator">6</span> publicaciones </p>
+        <p><span class="insta-indicator">{{post_user| length }}</span> publicaciones </p>
         <p><span class="insta-indicator">62</span> seguidores</p>
         <p><span class="insta-indicator">90</span> seguidos</p>
       </section>
@@ -35,51 +48,18 @@
     </section>
   </section>
   <section class="insta-gallery">
-    <section class="insta-picture-container"><img class="insta-pictures" src="http://first2board.com/carolinatravelgirl/files/2013/12/Avicii-logo-2.jpg"/>
-      <section class="insta-picture-data"><span><i class="fa fa-heart-o"></i>
-          <spam>12k</spam></span><span><i class="fa fa-comment"></i>
-          <spam>123k</spam></span></section>
-    </section>
-    <section class="insta-picture-container"><img class="insta-pictures" src="http://first2board.com/carolinatravelgirl/files/2013/12/Avicii-logo-2.jpg"/>
-      <section class="insta-picture-data"><span><i class="fa fa-heart-o"></i>
-          <spam>12k</spam></span><span><i class="fa fa-comment"></i>
-          <spam>123k</spam></span></section>
-    </section>
-    <section class="insta-picture-container"><img class="insta-pictures" src="http://first2board.com/carolinatravelgirl/files/2013/12/Avicii-logo-2.jpg"/>
-      <section class="insta-picture-data"><span><i class="fa fa-heart-o"></i>
-          <spam>12k</spam></span><span><i class="fa fa-comment"></i>
-          <spam>123k</spam></span></section>
-    </section>
-    <section class="insta-picture-container"><img class="insta-pictures" src="http://first2board.com/carolinatravelgirl/files/2013/12/Avicii-logo-2.jpg"/>
-      <section class="insta-picture-data"><span><i class="fa fa-heart-o"></i>
-          <spam>12k</spam></span><span><i class="fa fa-comment"></i>
-          <spam>123k</spam></span></section>
-    </section>
-    <section class="insta-picture-container"><img class="insta-pictures" src="http://first2board.com/carolinatravelgirl/files/2013/12/Avicii-logo-2.jpg"/>
-      <section class="insta-picture-data"><span><i class="fa fa-heart-o"></i>
-          <spam>12k</spam></span><span><i class="fa fa-comment"></i>
-          <spam>123k</spam></span></section>
-    </section>
-    <section class="insta-picture-container"><img class="insta-pictures" src="http://first2board.com/carolinatravelgirl/files/2013/12/Avicii-logo-2.jpg"/>
-      <section class="insta-picture-data"><span><i class="fa fa-heart-o"></i>
-          <spam>12k</spam></span><span><i class="fa fa-comment"></i>
-          <spam>123k</spam></span></section>
-    </section>
-    <section class="insta-picture-container"><img class="insta-pictures" src="http://first2board.com/carolinatravelgirl/files/2013/12/Avicii-logo-2.jpg"/>
-      <section class="insta-picture-data"><span><i class="fa fa-heart-o"></i>
-          <spam>12k</spam></span><span><i class="fa fa-comment"></i>
-          <spam>123k</spam></span></section>
-    </section>
-    <section class="insta-picture-container"><img class="insta-pictures" src="http://first2board.com/carolinatravelgirl/files/2013/12/Avicii-logo-2.jpg"/>
-      <section class="insta-picture-data"><span><i class="fa fa-heart-o"></i>
-          <spam>12k</spam></span><span><i class="fa fa-comment"></i>
-          <spam>123k</spam></span></section>
-    </section>
-    <section class="insta-picture-container"><img class="insta-pictures" src="http://first2board.com/carolinatravelgirl/files/2013/12/Avicii-logo-2.jpg"/>
-      <section class="insta-picture-data"><span><i class="fa fa-heart-o"></i>
-          <spam>12k</spam></span><span><i class="fa fa-comment"></i>
-          <spam>123k</spam></span></section>
-    </section>
+    {% if post_user %}
+      {% for curr_post in post_user %}
+      <section class="insta-picture-container"><img class="insta-pictures" src="{% static '' %}{{curr_post.photo}}"/>
+        <section class="insta-picture-data"><span><i class="fa fa-heart-o"></i>
+            <spam>12k</spam></span><span><i class="fa fa-comment"></i>
+            <spam>123k</spam></span></section>
+      </section>
+      {% endfor %}
+    {% else %}
+      no tiene publicaciones
+    {% endif %}
+
   </section>
 </section>
 

@@ -4,6 +4,7 @@ from Instagram.models import *
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+from django.core.files.storage import FileSystemStorage
 def index (request):
     if request.user.is_authenticated:
             return redirect('electro')
@@ -29,7 +30,28 @@ def electro(request):
 
 @login_required
 def avicii(request):
+    curr_user =request.user
     mi_usuario = MiUsuario.objects.get(pk = request.user.pk)
-
-    context = {'usuario_actual' : mi_usuario }
+    post_user = post.objects.filter(user_id = curr_user.id)
+    context = {'usuario_actual' : mi_usuario,'post_user': post_user }
     return render (request, 'avicii.html',context)
+
+@login_required
+def galeria (request):
+    if request.method == 'GET':
+        return render (request, 'galeria.html')
+    else:
+        photo = request.FILES['photo']
+        fs = FileSystemStorage()
+        curr_user = request.user;
+        cantidad_post = post.objects.filter(user_id=curr_user.id).count();
+        name = curr_user.username + '-'+  str (cantidad_post);
+        filename = fs.save (name, photo)
+        path = fs.url(filename)
+        description = request.POST['descripcion'];
+        mi_curr_user = MiUsuario (pk = curr_user.pk)
+        newPost = post (photo= path, descripcion= description, user_id = mi_curr_user)
+        newPost.save()
+
+
+        return redirect('avicii')

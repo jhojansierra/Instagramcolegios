@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>subir foto </title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'css/navbar.css'%}">
+  </head>
+  <body>
+
+
+  <nav class="navbar">
+    <section class="logo-section"><img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Instagram_simple_icon.svg/600px-Instagram_simple_icon.svg.png"/>
+      <div></div><img class="logo_name" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png"/>
+    </section>
+    <section class="search-section">
+      <input class="input-search" type="search" name="search" placeholder="Buscar"/>
+    </section>
+    <section class="icons-section">
+      <a class="fa fa-upload" href="{% url 'galeria' %}"></a>
+      <a class="fa fa-heart-o" href="#"></a>
+      <a class="fa fa-user-o" href="{% url 'avicii' %}"></a>
+    </section>
+  </nav>
+
+    <form class="" action="{% url 'galeria'%}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <br>
+      <input type="file" name="photo" ><br>
+      <textarea name="descripcion" placeholder="descripcion" rows="3" cols="20"></textarea><br>
+
+      <button  name="button">subir foto</button>
+    </form>
+  </body>
+</html>

@@ -9,6 +9,7 @@ urlpatterns =[
     url(r'^Logout/$', auth_views.LogoutView.as_view(),name='Logout'),
     url(r'^electro/$', views.electro, name = 'electro'),
     url(r'^avicii/$', views.avicii, name = 'avicii'),
+    url(r'^galeria/$', views.galeria, name = 'galeria'),
 
 
 

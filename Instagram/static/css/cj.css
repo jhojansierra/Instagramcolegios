@@ -10,6 +10,7 @@ body {
           align-items: center;
   min-height: 100vh;
   background: #F8F9F9;
+  font-family: arial;
 }
 
 .photo_container {
@@ -20,9 +21,8 @@ body {
 
 .photo_container .photo_username {
   padding: 10px;
-  border-radius: 50%;
   width: 100px;
-  height: 10px;
+  font-family: david;
 }
 
 .photo_container .photo_header {
@@ -35,13 +35,18 @@ body {
 .photo_container .photo_lnput {
   padding: 10px;
   padding-top: 16px;
-  font-size: 1.04rem;
   margin: 5px 0;
 }
 
-.photo_container .photo_buttom {
-  width: 100%;
+.buttom {
+  width: 210px;
   font-size: 94%;
+  background: red;
+  border-radius: 3px;
+  padding: 3px;
+  margin: 2px;
+  color: white;
+  border: 1px solid #ccc;
 }
 
 .photo_container .photo_add {
@@ -49,4 +54,11 @@ body {
   font-size: 1.04rem;
   margin: 5px 0;
   border-radius: 50px;
+}
+
+.photo_container .photo_text {
+  -webkit-box-align: 10px;
+      -ms-flex-align: 10px;
+          align-items: 10px;
+  height: 80px;
 }

@@ -1,12 +1,13 @@
 {% load static %}
 <!DOCTYPE html>
-<html >
+<html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>inicio</title>
+  <title>index2</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="{% static 'css/cj.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+
 
 
 
@@ -16,40 +17,46 @@
   <form class" "action="{% url 'index' %}" method="post">
     {% csrf_token %}
   <section class='photo_container'>
-    <center><h2 class='photo_username'><i>Instagram</i></h2></secton>
+  <center>
+    <h1 class='photo_username'><i>Instagram</i></h1></secton>
     <section class="photo_header">
-     reguistrate para ver las imagenes y videos de tus amigos
+      reguistrate para ver las imagenes y videos de tus amigos
     </section>
     <section class="photo_buttom">
-      <input type="submit"value="inicia secion con Facebook"><p>
+      <button class="buttom">iniciar con facebook</button>
+      <p>
     </section>
-      <hr width="85%" />
+    <hr width="85%" />
 
     <section class="photo_lnput">
       <section class="photo_add">
         <input type="text" name="correo" placeholder="correo electronico">
       </section>
       <section class="photo_add">
-      <input type="text"name="nombre_completo" placeholder="nombre completo">
+        <input type="text" name="nombre_completo" placeholder="nombre completo">
       </section>
       <section class="photo_add">
         <input type="text" name="usuario" placeholder="nombre de usuario">
       </section>
       <section class="photo_add">
-        <input type="password"name="password" placeholder="contraseña">
+        <input type="password" name="password" placeholder="contraseña">
       </section>
     </section>
-      </div>
+    </div>
     <section class="photo_buttom">
-      <input type="submit"value="registrarse"><p>
+      <button class="buttom">registrarse</button>
+      <p>
     </section>
     <section class="photo_text">
       Al registrarse acepta nuestras condiciones y la politica de privacidad
     </section>
 
-  </section>
-    </center>
-  </form>
+
+  </center>
+
+
+</section>
+</form>
 
 </body>
 </html>
