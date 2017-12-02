@@ -26,7 +26,11 @@ def index (request):
 
 @login_required
 def electro(request):
-    return render (request, 'electro.html')
+    curr_user =request.user
+    mi_usuario = MiUsuario.objects.get(pk = request.user.pk)
+    post_user = post.objects.filter(user_id = curr_user.id)
+    context = {'usuario_actual' : mi_usuario,'post_user': post_user }
+    return render (request, 'electro.html',context)
 
 @login_required
 def avicii(request):
@@ -55,3 +59,4 @@ def galeria (request):
 
 
         return redirect('avicii')
+        return redirect('electro')

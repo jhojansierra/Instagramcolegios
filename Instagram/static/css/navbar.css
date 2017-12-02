@@ -3,6 +3,10 @@
   justify-content: space-between;
   padding: 20px;
   border-bottom: 2px solid #ddd;
+  position: fixed;
+  width: 100%;
+  top:0;
+  left: 0;
 }
 .navbar .logo-section {
   display: flex;
